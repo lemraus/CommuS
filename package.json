@@ -1,0 +1,33 @@
+{
+    "name": "commus",
+    "version": "1.0.0",
+    "description": "Site web de la CommuS' CentraleSupélec 2019",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --exec babel-node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Lemraus/CommuS.git"
+    },
+    "keywords": [
+        "commus",
+        "centralesupelec"
+    ],
+    "author": "Armel Chausse",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Lemraus/CommuS/issues"
+    },
+    "homepage": "https://github.com/Lemraus/CommuS#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "nodemon": "^1.18.10"
+    }
+}

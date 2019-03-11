@@ -1,0 +1,6 @@
+// Babel basically helps making your JS features compatible with the browsers of your choice
+{
+    "presets": [
+        "env"
+    ]
+}
