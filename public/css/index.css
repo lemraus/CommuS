@@ -1,0 +1,173 @@
+/* Fonts */
+@font-face {
+    font-family: Duck in Shipah;
+    src: url("fonts/Duck\ in\ Shipah\ Italic.ttf");
+}
+
+/* General */
+
+section {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    text-align: center;
+}
+section h2 {
+    font-size: 3em;
+    font-family: Duck in Shipah;
+}
+
+
+.textSection .textBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    padding: 1em;
+    text-align: justify;
+}
+.textSection .textBox h2 {
+    text-align: center;
+    font-family: Duck in Shipah;
+    font-size: 3em;
+}
+
+
+/* Specific */
+
+#logoSection::before {
+    content: "";
+    width: 100vw;
+    background-image: url("../static/img/curtain-min.jpg");
+    background-size: 100% 100%;
+    top: 0; left: 0; bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+#logoSection img {
+    width: 60%;
+    /* The next 4 lines aim to center the img relatively to its container */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#descripFame {
+    background-image: url("../static/img/descripbg.jpg");
+}
+#descripFame .textBox {
+    font-size: 1.3em;
+}
+
+
+#characters {
+    background-image: url("../static/img/curtain2-min.jpg");
+    padding: 5em 20%;
+}
+#charBoxesWrapper {
+    padding: 5em 0;
+}
+.charBox {
+    padding: 1em;
+    margin-bottom: 4em;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.charBox h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.charBox p {    
+    text-align: justify;
+}
+
+
+@media screen and (min-width: 768px){
+    html {
+        /* For parallax */
+        overflow: hidden;
+    }
+
+    body {  
+        /* For parallax */
+        height: 100vh;
+        perspective: 1px;
+        transform-style: preserve-3d;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    .textSection .textBox {
+        margin: 0 20%;
+    }
+
+
+    #logoSection::before {
+        /* For parallax */
+        /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
+        transform: translateZ(-1px) scale(2); 
+    }
+    #logoSection {
+        /* For parallax */
+        transform-style: preserve-3d;
+        /* In order to not overlap the next section */
+        z-index: -1;
+    }
+    #logoSection img {
+        width: 50%;
+        top: 45%;
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+    #logoSection img.visible {
+        opacity: 1;
+    }
+
+
+    #characters {
+        padding: 5em 10%;
+    }
+    #charBoxesWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4em;
+        row-gap: 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #characters {
+        padding: 5em 20%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .textSection .textBox {
+        margin: 0 30%;
+    }
+
+    #logoSection img {
+        width: 30%;
+    }
+
+    #characters {
+        padding: 5em 10%;
+    }
+    #charBoxesWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .textSection .textBox {
+        margin: 0 30%;
+    }
+
+    #characters {
+        padding: 5em 20%;
+    }
+}

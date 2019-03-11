@@ -1,0 +1,117 @@
+/* Fonts */
+@font-face {
+    font-family: Duck in Shipah;
+    src: url("fonts/Duck\ in\ Shipah\ Italic.ttf");
+}
+@font-face{
+    font-family: FallingSky;
+    src: url("fonts/FallingSky/FallingSkyCond.otf");
+}
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-size: 80%;
+    font-family: FallingSky;
+}
+
+/* General for larger screens (from the width of an iPad screen) */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+/* Navbar */
+#navbar {
+    padding: 1em 1em 0.5em 1em;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+}
+#navbar #navToggler {
+    display: inline-block;
+}
+#navbar #navToggler div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+#navbar #nav {
+    font-family: Duck in Shipah;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+}
+#navbar.expanded #nav {
+    width: auto;
+    height: 8em;
+    opacity: 1;
+    padding: 1em 0;
+}
+#nav a {
+    text-decoration: none;
+    color: gray;
+    transition: all 0.3s ease-in;
+}
+#nav a.active, #nav a:hover {
+    color: white;
+}
+
+/* Navbar for larger screens (from the width of an iPad screen) */
+@media screen and (min-width: 768px) {
+    #navbar {
+        padding: 0 1em 1em 1em;
+        background-color: transparent;
+        transition: all 0.3s ease-in;
+        position: absolute;
+    }
+    #navbar.scrolled {
+        background-color: black;
+        position: fixed;
+    }
+    #navbar #navToggler {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    #navbar #nav {
+        display: block;
+        width: auto;
+        height: auto;
+        opacity: 1;
+    }
+    #navbar.scrolled #nav {
+        text-align: left;
+    }
+    #navbar #nav a {
+        margin-right: 0.5em;
+    }
+}
+
+
+/* Footer */
+
+#footer {
+    height: 30vh;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
