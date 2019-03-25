@@ -4,10 +4,6 @@
     src: url("fonts/Duck\ in\ Shipah\ Italic.ttf");
 }
 @font-face{
-    font-family: FallingSky;
-    src: url("fonts/FallingSky/FallingSkyCond.otf");
-}
-@font-face{
     font-family: Oregon;
     src: url("fonts/Oregon/Oregon\ LDO.ttf");
 }
@@ -23,6 +19,16 @@ body {
     color: white;
     font-size: 80%;
     font-family: Oregon;
+}
+
+section {
+    text-align: center;
+}
+section.full {
+    min-height: 100vh;
+}
+section.first {
+    padding: 7em;
 }
 
 /* General for larger screens (from the width of an iPad screen) */
@@ -82,12 +88,11 @@ body {
     #navbar {
         padding: 0 1em 1em 1em;
         background-color: transparent;
-        transition: all 0.3s ease-in;
-        position: absolute;
+        transition: background-color 0.5s ease-in;
+        position: fixed;
     }
     #navbar.scrolled {
         background-color: black;
-        position: fixed;
     }
     #navbar #navToggler {
         width: 0;
@@ -99,9 +104,15 @@ body {
         width: auto;
         height: auto;
         opacity: 1;
+        text-align: center;
+        white-space: nowrap;
+        overflow: visible;
+        width: 100%;
+        transition: width 0.5s ease-in-out;
     }
     #navbar.scrolled #nav {
-        text-align: left;
+        width: 0;
+        font-size: 1.7em;
     }
     #navbar #nav a {
         margin-right: 0.5em;

@@ -3,6 +3,10 @@
     font-family: Duck in Shipah;
     src: url("fonts/Duck\ in\ Shipah\ Italic.ttf");
 }
+@font-face {
+    font-family: Aliquam UltraLight;
+    src: url("fonts/Aliquam/Aliquam.ttf");
+}
 
 /* General */
 
@@ -45,13 +49,14 @@ section h2 {
     position: absolute;
     z-index: -1;
 }
+#logoSection {
+    font-family: Aliquam UltraLight;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 #logoSection img {
     width: 60%;
-    /* The next 4 lines aim to center the img relatively to its container */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -101,6 +106,12 @@ section h2 {
     }
 
 
+    /* This rule negates the fixed position of the navbar, which is used for the other pages */
+    #navbar {
+        position: absolute;
+    }
+
+
     .textSection .textBox {
         margin: 0 20%;
     }
@@ -117,14 +128,15 @@ section h2 {
         /* In order to not overlap the next section */
         z-index: -1;
     }
-    #logoSection img {
-        width: 50%;
-        top: 45%;
+    #logoSection #logoBox {
         opacity: 0;
         transition: all 1s ease-in;
     }
-    #logoSection img.visible {
+    #logoSection #logoBox.visible {
         opacity: 1;
+    }
+    #logoSection img {
+        width: 50%;
     }
 
 

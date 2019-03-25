@@ -9,7 +9,7 @@ function scrollActions() {
         triggerElement: "#navbar",
         triggerHook: 0,
     })
-        .setClassToggle("#logoSection img", "visible")
+        .setClassToggle("#logoSection #logoBox", "visible")
         .addTo(controller);
 }
 
