@@ -7,6 +7,10 @@
     font-family: Oregon;
     src: url("fonts/Oregon/Oregon\ LDO.ttf");
 }
+@font-face {
+    font-family: Aliquam UltraLight;
+    src: url("fonts/Aliquam/Aliquam.ttf");
+}
 
 /* General */
 * {
@@ -16,9 +20,17 @@
 }
 
 body {
+    background: url("../static/img/curtain2-min.jpg") no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-size: 80%;
     font-family: Oregon;
+}
+
+.vcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section {
@@ -41,11 +53,15 @@ section.first {
 /* Navbar */
 #navbar {
     padding: 1em 1em 0.5em 1em;
-    background-color: black;
+    background-color: transparent;
     position: fixed;
     width: 100%;
     text-align: right;
     z-index: 1;
+    transition: all 0.3s ease-in;
+}
+#navbar.scrolled, #navbar.expanded {
+    background-color: black;
 }
 #navbar #navToggler {
     display: inline-block;
@@ -65,8 +81,8 @@ section.first {
     width: 0;
     height: 0;
     opacity: 0;
-    transition: all 0.3s ease-in;
     overflow: hidden;
+    transition: all 0.3s linear;
 }
 #navbar.expanded #nav {
     width: auto;
@@ -84,15 +100,12 @@ section.first {
 }
 
 /* Navbar for larger screens (from the width of an iPad screen) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     #navbar {
         padding: 0 1em 1em 1em;
         background-color: transparent;
         transition: background-color 0.5s ease-in;
         position: fixed;
-    }
-    #navbar.scrolled {
-        background-color: black;
     }
     #navbar #navToggler {
         width: 0;
@@ -123,10 +136,74 @@ section.first {
 /* Footer */
 
 #footer {
-    height: 30vh;
     background-color: black;
+    font-family: Oregon;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 4em 0;
+}
+
+#footer div {
+    margin-bottom: 2em;
+}
+
+#address img {
+    width: 40%;
+    margin-bottom: 1em;
+}
+
+#contact a {
+    color: white;
+}
+#networkBox img {
+    width: 15%;
+    display: inline-block;
+}
+
+/* Footer responsivity */
+@media screen and (min-width: 768px) {
+    #footer {
+        text-align: left;
+        padding: 5em 10% 10em;
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    #footer div {
+        margin-bottom: 0;
+    }
+
+    #address img {
+        width: 50%;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #networkBox img {
+        width: 20%;
+    }
+
+    #copyright {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: right;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #footer {
+        padding: 5em 20% 10em;
+    }
+
+    #address img {
+        width: 40%;
+    }
+}
+@media screen and (min-width: 1600px) {
+    #networkBox img {
+        width: 15%;
+    }
 }

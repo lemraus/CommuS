@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Infos pratiques</title>
+    <title>CommuS' - Infos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
-    <link rel="stylesheet" href="./css/trailer.css">
+    <link rel="stylesheet" href="./css/infos.css">
     <script src="./js/main.js" defer></script>
     <script src="./js/ScrollMagic.min.js" defer></script>
     <script src="./js/scrollNavbar.js" defer></script>
+    <script src="./js/infos.js" defer></script>
 </head>
 
 <body>
@@ -29,12 +30,61 @@
         </div>
     </div>
 
-    <section class="full first">
-        <h1>Infos Pratiques</h1>
+    <section class="full">
+        <div class="wrapper">
+            <div class="col">
+                <h2>Dates des représentations</h2>
+                <p>13,15,16,20,21,26,27 mai à 20h</p>
+            </div>
+
+            <div class="col">
+                <h2>Adresse</h2>
+                <p>Théâtre Joël Rousseau, bâtiment Bouygues <br />
+                    Campus CentraleSupélec <br />
+                    9 Rue Joliot Curie <br />
+                    91190 Gif-sur-Yvette
+                </p>
+            </div>
+
+            <div id="transports" class="col span">
+                <h2>Transports</h2>
+                <p>RER B Le Guichet ou RER B Massy-Palaiseau</p>
+                puis
+                <p>Bus 9 depuis Le Guichet ou 91.06 / 91.10 depuis Massy-Palaiseau</p><br />
+                <p>Arrêt Moulon</p>
+            </div>
+
+            <div id="plan" class="col span">
+                <h2>Plan d'accès</h2>
+                <img src="./static/img/plan-min.png" alt="">
+
+                <div id="popup">
+                    <a onclick="closePopup()">&times;</a>
+                    <img src="./static/img/plan-min.png" alt="">
+                </div>
+            </div>
+        </div>
     </section>
 
     <div id="footer">
-        <h3>CommuS' 2019</h3>
+        <div id="address">
+            <img src="./static/img/CommuS.png">
+            <p>
+                CommuS' CentraleSupélec<br />
+                9 rue Joliot Curie<br />
+                91190 Gif-sur-Yvette
+            </p>
+        </div>
+        <div id="contact">
+            <a href="mailto:commus.gif@gmail.com">commus.gif@gmail.com</a> <br><br>
+            Suivez-nous:
+            <div id="networkBox">
+                <a href="https://www.facebook.com/CommuS-886678731490407/" target="blank"><img src="./static//img/fblogo.png"></a>
+            </div>
+        </div>
+        <div id="copyright">
+            &copy; CommuS' 2019
+        </div>
     </div>
 </body>
 

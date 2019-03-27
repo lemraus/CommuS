@@ -1,14 +1,29 @@
-@font-face{
-    font-family: Oregon;
-    src: url("fonts/Oregon/Oregon\ LDO.ttf");
-}
-
 body {
-    background: url("../static/img/curtain2-min.jpg") no-repeat center center fixed;
-    background-size: cover;
     padding-top: 5em;
 }
 
 .App {
     font-family: Oregon;
+}
+
+.Team .intro {
+    background: url("../static/img/intro_2019.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+    h3 {
+        font-size: 0.9em;
+    }
+    h4 {
+        font-size: 0.8em;
+    }
+}
+@media screen and (min-width: 1024px) {
+    h3 {
+        font-size: 1em;
+    }
+    h4 {
+        font-size: 0.9em;
+    }
 }

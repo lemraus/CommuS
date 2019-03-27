@@ -1,9 +1,9 @@
 // import ScrollMagic from "./ScrollMagic.min.js";
 
 function scrollNavbar() {
-    if (window.innerWidth < 768) {
-        return;
-    }
+    // if (window.innerWidth < 768) {
+    //     return;
+    // }
 
     const controller = new ScrollMagic.Controller();
 

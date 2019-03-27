@@ -1,14 +1,8 @@
-/* Fonts */
-@font-face {
-    font-family: Duck in Shipah;
-    src: url("fonts/Duck\ in\ Shipah\ Italic.ttf");
-}
-@font-face {
-    font-family: Aliquam UltraLight;
-    src: url("fonts/Aliquam/Aliquam.ttf");
-}
-
 /* General */
+
+body {
+    background: darkred;
+}
 
 section {
     position: relative;
@@ -43,10 +37,10 @@ section h2 {
 #logoSection::before {
     content: "";
     width: 100vw;
-    background-image: url("../static/img/curtain-min.jpg");
+    background: url("../static/img/curtain-min.jpg");
     background-size: 100% 100%;
     top: 0; left: 0; bottom: 0;
-    position: absolute;
+    position: fixed;
     z-index: -1;
 }
 #logoSection {
@@ -82,6 +76,9 @@ section h2 {
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 }
+.charBox img {
+    width: 100%;
+}
 .charBox h3 {
     font-size: 1.5em;
     margin-bottom: 1em;
@@ -92,50 +89,11 @@ section h2 {
 
 
 @media screen and (min-width: 768px){
-    html {
-        /* For parallax */
-        overflow: hidden;
-    }
-
-    body {  
-        /* For parallax */
-        height: 100vh;
-        perspective: 1px;
-        transform-style: preserve-3d;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-
-    /* This rule negates the fixed position of the navbar, which is used for the other pages */
-    #navbar {
-        position: absolute;
-    }
-
-
     .textSection .textBox {
         margin: 0 20%;
     }
 
 
-    #logoSection::before {
-        /* For parallax */
-        /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
-        transform: translateZ(-1px) scale(2); 
-    }
-    #logoSection {
-        /* For parallax */
-        transform-style: preserve-3d;
-        /* In order to not overlap the next section */
-        z-index: -1;
-    }
-    #logoSection #logoBox {
-        opacity: 0;
-        transition: all 1s ease-in;
-    }
-    #logoSection #logoBox.visible {
-        opacity: 1;
-    }
     #logoSection img {
         width: 50%;
     }
@@ -152,7 +110,53 @@ section h2 {
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
+    html {
+        /* For parallax */
+        overflow: hidden;
+    }
+
+    body {  
+        /* For parallax */
+        height: 100vh;
+        perspective: 1px;
+        transform-style: preserve-3d;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    /* This rule negates the scrolling effects of the navbar, which is used for the other pages */
+    #navbar {
+        position: absolute;
+    }
+    #navbar.scrolled {
+        background-color: transparent;
+    }
+    #navbar.scrolled #nav {
+        width: 100%;
+        font-size: 2em;
+    }
+
+    #logoSection::before {
+        /* For parallax */
+        /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
+        transform: translateZ(-1px) scale(2);
+        background-position: absolute;
+    }
+    #logoSection {
+        /* For parallax */
+        transform-style: preserve-3d;
+        /* In order to not overlap the next section */
+        z-index: -1;
+    }
+    #logoSection #logoBox {
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+    #logoSection #logoBox.visible {
+        opacity: 1;
+    }
+
     #characters {
         padding: 5em 20%;
     }

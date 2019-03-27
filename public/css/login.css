@@ -1,13 +1,7 @@
-body {
-    background-color: black;
-}
-
-#navbar {
-    position: relative;
-}
-
 #loginSection {
-    margin: 5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 p {
