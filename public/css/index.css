@@ -69,7 +69,8 @@ section h2 {
 
 
 #characters {
-    background-image: url("../static/img/curtain2-min.jpg");
+    background: url("../static/img/curtain2-min.jpg") no-repeat center center fixed;
+    background-size: cover;
     padding: 5em 20%;
 }
 #charBoxesWrapper {

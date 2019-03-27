@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/main.js"></script>
+    <script>
+        function onSubmit(form) {
+            const username = form.username.value;
+            const password = form.password.value;
+
+            const authReq = new XMLHttpRequest();
+            authReq.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + 3 * 24 * 60 * 60 * 1000); // expires in 3 days
+                    const expires = d.toUTCString();
+
+                    document.cookie = `auth_token=${JSON.parse(this.responseText).token}; expires=${expires}; path=/`;
+                    window.location.replace("/equipe");
+                }
+            }
+            authReq.open("POST", "http://localhost:85/api/users/auth");
+            authReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            authReq.send(`username=${username}&password=${password}`);
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="navToggler" onClick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="nav">
+            <a href="/" class="navitem">Fame</a>
+            <a href="/equipe" class="navitem">L'Equipe</a>
+            <a href="/trailer" class="navitem">Trailer</a>
+            <a href="/billetterie" class="navitem">Billetterie</a>
+            <a href="/infos" class="navitem">Infos pratiques</a>
+        </div>
+    </div>
+
+    <section id="loginSection">
+        <form action="/equipe" onsubmit="return onSubmit(this)">
+            <p>
+                <label for="username">Nom d'utilisateur:</label><br />
+                <input type="text" name="username" />
+            </p>
+            <p>
+                <label for="password">Mot de passe:</label><br />
+                <input type="password" name="password" />
+            </p>
+
+            <button type="submit">Se connecter</button>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+@font-face{
+    font-family: Oregon;
+    src: url("fonts/Oregon/Oregon\ LDO.ttf");
+}
+
+body {
+    background: url("../static/img/curtain2-min.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 5em;
+}
+
+.App {
+    font-family: Oregon;
+}
