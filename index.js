@@ -23,4 +23,4 @@ app
     .use("/", standardRouter)
     .use("/api", apiRouter);
 
-app.listen(process.env.PORT || 85);
+app.listen(process.env.PORT);
