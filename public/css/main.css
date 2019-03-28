@@ -22,6 +22,7 @@
 body {
     background: url("../static/img/curtain2-min.jpg");
     background-size: 100vw 100vh;
+    background-attachment: fixed;
     color: white;
     font-size: 80%;
     font-family: Oregon;
