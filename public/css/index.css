@@ -1,7 +1,7 @@
 /* General */
 
 body {
-    background: url("../static/img/curtain-min.jpg") no-repeat center center fixed;
+    background: url("../static/img/curtain-min.jpg") fixed;
     background-size: 100vw 100vh;
 }
 
