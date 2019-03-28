@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+require("dotenv").config();
 
-mongoose.connect("mongodb+srv://armel:kana8928lolosu@cluster0-9uqo2.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+mongoose.connect(process.env.DB_CONNECTION_STRING, { useNewUrlParser: true });
 mongoose.set("useCreateIndex", true);
 mongoose.set("useFindAndModify", false);
 
