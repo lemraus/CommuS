@@ -63,7 +63,7 @@ section h2 {
 }
 
 #characters {
-    background: url("../static/img/curtain2-min.jpg") no-repeat center center;
+    background: url("../static/img/curtain2-min.jpg");
     background-size: cover;
     padding: 5em 20%;
 }
@@ -158,6 +158,7 @@ section h2 {
     }
 
     #characters {
+	background-attachment: fixed;
         padding: 5em 20%;
     }
 }
