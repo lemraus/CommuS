@@ -1,8 +1,7 @@
 /* General */
 
 body {
-    background: url("../static/img/curtain-min.jpg");
-    background-position: fixed;
+    background: url("../static/img/curtain-min.jpg") fixed;
 }
 
 section {
