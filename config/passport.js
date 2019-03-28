@@ -1,6 +1,8 @@
 import passport from "passport";
 import passportJWT from "passport-jwt";
 import User from "../models/User";
+// For environment variables
+require("dotenv").config();
 
 const { Strategy, ExtractJwt } = passportJWT;
 

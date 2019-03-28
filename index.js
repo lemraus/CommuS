@@ -3,6 +3,8 @@ import parser from "body-parser";
 // Routers
 import standardRouter from "./routes/standard";
 import apiRouter from "./routes/api";
+// For environment variables
+require("dotenv").config();
 
 // Creating the Express app and setting the parser
 const app = new express();
