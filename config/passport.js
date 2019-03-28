@@ -4,7 +4,7 @@ import User from "../models/User";
 
 const { Strategy, ExtractJwt } = passportJWT;
 
-const secret = process.env.SECRET_OR_KEY || "dqd654dq3d8zeq322s2e68zdqsd1qze7";
+const secret = process.env.SECRET_OR_KEY;
 const options = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: secret
