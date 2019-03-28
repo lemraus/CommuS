@@ -18,7 +18,7 @@ app
     // defining the "public" folder as the root for static files
     .use(express.static(publicDir))
     .use(function (req, res, next) {
-        res.header("Access-Control-Allow-Origin", "http://commus.fr");
+        res.header("Access-Control-Allow-Origin", "/");
         res.header("Access-Control-Allow-Methods", "DELETE");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         res.header("Connection", "Keep-Alive");
