@@ -62,9 +62,8 @@ section h2 {
     font-size: 1.3em;
 }
 
-
 #characters {
-    background: url("../static/img/curtain2-min.jpg") no-repeat center center fixed;
+    background: url("../static/img/curtain2-min.jpg") no-repeat center center;
     background-size: cover;
     padding: 5em 20%;
 }
