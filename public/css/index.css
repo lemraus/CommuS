@@ -1,9 +1,7 @@
 /* General */
 
 body {
-    background: url("../static/img/curtain-min.jpg") fixed;
-    background-size: 100vw 110vh;
-    overflow: visible;
+    background: url("../static/img/curtain-min.jpg");
 }
 
 section {
