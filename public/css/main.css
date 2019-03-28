@@ -20,8 +20,8 @@
 }
 
 body {
-    background: url("../static/img/curtain2-min.jpg");
-    background-size: 100vw 100vh;
+    background: url("../static/img/curtain2-min.jpg") no-repeat center center;
+    background-size: 300% 100%;
     color: white;
     font-size: 80%;
     font-family: Oregon;
@@ -46,7 +46,14 @@ section.first {
 /* General for larger screens (from the width of an iPad screen) */
 @media screen and (min-width: 768px) {
     body {
+	background-size: 200% 100%;
         font-size: 100%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    body{
+	background-size: 100% 100%;
+	background-attachment: fixed;
     }
 }
 
@@ -99,13 +106,13 @@ section.first {
     color: white;
 }
 
-/* Navbar for larger screens (from the width of an iPad screen) */
+/* Navbar for larger screens (from the width of an iPad Pro screen) */
 @media screen and (min-width: 1024px) {
+
     #navbar {
         padding: 0 1em 1em 1em;
         background-color: transparent;
         transition: background-color 0.5s ease-in;
-        position: fixed;
     }
     #navbar #navToggler {
         width: 0;
