@@ -21,7 +21,7 @@
 
 body {
     background: url("../static/img/curtain2-min.jpg");
-    background-size: cover;
+    background-size: 100vw 100vh;
     background-position: fixed;
     color: white;
     font-size: 80%;
