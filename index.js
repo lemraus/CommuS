@@ -1,5 +1,6 @@
 import express from "express";
 import parser from "body-parser";
+import path from "path";
 // Routers
 import standardRouter from "./routes/standard";
 import apiRouter from "./routes/api";
@@ -13,7 +14,7 @@ app
         extended: false
     }))
     // defining the "public" folder as the root for static files
-    .use(express.static("public"))
+    .use(express.static(path.join(__dirname, "/public/")))
     .use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "http://commus.fr");
         res.header("Access-Control-Allow-Methods", "DELETE");
