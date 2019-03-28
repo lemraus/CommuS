@@ -1,8 +1,7 @@
 /* General */
 
 body {
-    background-image: url("../static/img/curtain-min.jpg");
-    background-position: fixed;
+    background: red;
 }
 
 section {
@@ -39,6 +38,8 @@ section h2 {
     content: "";
     width: 100vw;
     top: 0; left: 0; bottom: 0;
+    background: url("../static/img/curtain-min.jpg");
+    background-size: 100% 100%;
     position: fixed;
     z-index: -1;
 }
@@ -122,7 +123,6 @@ section h2 {
         transform-style: preserve-3d;
         overflow-x: hidden;
         overflow-y: auto;
-        background: darkred;
     }
     
     /* This rule negates the scrolling effects of the navbar, which is used for the other pages */
@@ -138,8 +138,6 @@ section h2 {
     }
 
     #logoSection::before {
-        background: url("../static/img/curtain-min.jpg");
-        background-size: 100% 100%;
         /* For parallax */
         /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
         transform: translateZ(-1px) scale(2);
