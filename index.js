@@ -10,8 +10,6 @@ require("dotenv").config();
 const publicDir = path.join(__dirname, "public");
 const equipeDir = path.join(__dirname, "../equipe-app/");
 
-const onProduction = true;
-
 // Creating the Express app and setting the parser
 const app = new express();
 app
