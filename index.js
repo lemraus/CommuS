@@ -9,6 +9,8 @@ require("dotenv").config();
 
 const publicDir = path.join(__dirname, "public");
 
+const onProduction = false;
+
 // Creating the Express app and setting the parser
 const app = new express();
 app
@@ -18,7 +20,7 @@ app
     // defining the "public" folder as the root for static files
     .use(express.static(publicDir))
     .use(function (req, res, next) {
-        res.header("Access-Control-Allow-Origin", "/");
+        res.header("Access-Control-Allow-Origin", onProduction ? "/" : "http://localhost:3000");
         res.header("Access-Control-Allow-Methods", "DELETE");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         // res.header("Connection", "Keep-Alive");

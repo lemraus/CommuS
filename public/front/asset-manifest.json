@@ -1,13 +1,15 @@
 {
-  "main.css": "/equipe/static/css/main.9a585b3c.chunk.css",
-  "main.js": "/equipe/static/js/main.2941cd3e.chunk.js",
-  "main.js.map": "/equipe/static/js/main.2941cd3e.chunk.js.map",
+  "main.css": "/equipe/static/css/main.08045c99.chunk.css",
+  "main.js": "/equipe/static/js/main.5f3bdc9f.chunk.js",
+  "main.js.map": "/equipe/static/js/main.5f3bdc9f.chunk.js.map",
   "runtime~main.js": "/equipe/static/js/runtime~main.53ab1e65.js",
   "runtime~main.js.map": "/equipe/static/js/runtime~main.53ab1e65.js.map",
   "static/js/2.a793ace2.chunk.js": "/equipe/static/js/2.a793ace2.chunk.js",
   "static/js/2.a793ace2.chunk.js.map": "/equipe/static/js/2.a793ace2.chunk.js.map",
   "index.html": "/equipe/index.html",
-  "precache-manifest.d4d779bdda304a821605fea03278ad9b.js": "/equipe/precache-manifest.d4d779bdda304a821605fea03278ad9b.js",
+  "precache-manifest.2ae55e8de37e3a61f5fb41707515aecb.js": "/equipe/precache-manifest.2ae55e8de37e3a61f5fb41707515aecb.js",
   "service-worker.js": "/equipe/service-worker.js",
-  "static/css/main.9a585b3c.chunk.css.map": "/equipe/static/css/main.9a585b3c.chunk.css.map"
+  "static/css/main.08045c99.chunk.css.map": "/equipe/static/css/main.08045c99.chunk.css.map",
+  "static/media/index.css": "/equipe/static/media/curtain2-min.aa184553.jpg",
+  "static/media/Team.css": "/equipe/static/media/intro_2019.d6b8e59c.jpg"
 }
