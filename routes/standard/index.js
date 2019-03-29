@@ -4,7 +4,6 @@ import path from "path";
 const router = new Router();
 
 const publicDir = path.join(__dirname, "../../public/");
-const frontDir = path.join(publicDir, "front/");
 
 function getCookie(req, cname) {
     if (!req.headers.cookie) return "";
@@ -23,14 +22,9 @@ function getCookie(req, cname) {
     return "";
 }
 
-router.use("/equipe", express.static(frontDir));
-
 router
     .get("/", function (req, res) {
         return res.sendFile(publicDir + "index.html");
-    })
-    .get("/equipe/:year", function (req, res) {
-        return res.redirect("/equipe");
     })
     .get("/trailer", function (req, res) {
         return res.sendFile(publicDir + "trailer.html");

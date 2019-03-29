@@ -5,8 +5,8 @@ function showImg() {
     popup.classList.add("visible");
 }
 
-normalImg.addEventListener("click", showImg);
-
 function closePopup() {
     popup.classList.remove("visible");
 }
+
+normalImg.addEventListener("click", showImg);
