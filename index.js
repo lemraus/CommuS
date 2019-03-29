@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const publicDir = path.join(__dirname, "public");
 
-const onProduction = false;
+const onProduction = true;
 
 // Creating the Express app and setting the parser
 const app = new express();
