@@ -1,9 +1,4 @@
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 section h1 {
     font-family: Duck in Shipah;
-    font-size: 5em;
+    font-size: 4em;
 }
