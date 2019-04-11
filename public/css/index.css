@@ -1,7 +1,7 @@
 /* General */
 
 body {
-    background: darkred;
+    background: black;
 }
 
 section {
@@ -19,8 +19,8 @@ section h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     padding: 1em;
     text-align: justify;
 }
@@ -60,6 +60,91 @@ section h2 {
 #descripFame .textBox {
     font-size: 1.3em;
 }
+
+
+#triPhotos {
+    overflow: hidden;
+}
+#triPhotos .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3em;
+    background-size: cover;
+}
+#orchestreCol {
+    background: url("../static/img/orchestre.jpg") center center;
+}
+#succesPlanetaireCol {
+    background: url("../static/img/succes_planetaire.jpg") center center;
+}
+#spectacleEtudiantCol {
+    background: url("../static/img/spectacle_etudiant.jpg") center center;
+}
+#triPhotos .colText {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1em;
+}
+
+/* #triPhotos responsivity */
+@media screen and (min-width: 768px) {
+    #triPhotos {
+        height: 40vh;
+        display: flex;
+    }
+    #triPhotos .col {
+        width: calc(100% / 3);
+        padding: 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #triPhotos .col {
+        width: calc(100% / 3);
+        padding: 0.5em;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #triPhotos {
+        height: 50vh;
+    }
+    #triPhotos .col {
+        padding: 3em;
+        background: none;
+    }
+    #triPhotos .col::before {
+        content: "";
+        width: calc(100% / 3);
+        position: absolute;
+        top: 0; bottom: 0;
+        background-size: cover;
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in;
+        z-index: -1;
+    }
+    #triPhotos .col:hover::before {
+        opacity: 1;
+    }
+
+    #orchestreCol::before {
+        left: 0; 
+        background: url("../static/img/orchestre.jpg") center center;
+    }
+    #succesPlanetaireCol::before {
+        left: calc(100% / 3);
+        background: url("../static/img/succes_planetaire.jpg") center center;
+    }
+    #spectacleEtudiantCol::before {
+        left: calc(100% * 2 / 3);
+        background: url("../static/img/spectacle_etudiant.jpg") center center;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #triPhotos .col {
+        padding: 5em;
+        background: none;
+    }
+}
+
 
 #characters {
     background: url("../static/img/curtain2-min.jpg");
