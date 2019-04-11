@@ -2,6 +2,7 @@
 
 body {
     background: black;
+    overflow-x: hidden;
 }
 
 section {
@@ -15,22 +16,6 @@ section h2 {
 }
 
 
-.textSection .textBox {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    padding: 1em;
-    text-align: justify;
-}
-.textSection .textBox h2 {
-    text-align: center;
-    font-family: Duck in Shipah;
-    font-size: 3em;
-}
-
-
 /* Specific */
 
 #logoSection::before {
@@ -38,16 +23,24 @@ section h2 {
     width: 100%;
     min-height: 100vh;
     top: 0; left: 0;
-    background: url("../static/img/curtain-min.jpg");
-    background-size: 100% 100%;
+    background: url("../static/img/homebg.jpg") center center;
+    background-size: cover;
     position: absolute;
     z-index: -1;
 }
 #logoSection {
     font-family: Aliquam UltraLight;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+#logoSection #logoBox {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+#logoSection #logoBox.visible {
+    opacity: 1;
 }
 #logoSection img {
     width: 60%;
@@ -55,10 +48,54 @@ section h2 {
 
 
 #descripFame {
-    background-image: url("../static/img/descripbg.jpg");
+    background: black;
+    padding: 4em;
 }
 #descripFame .textBox {
     font-size: 1.3em;
+    margin-bottom: 2em;
+}
+#descripFame img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    #descripFame {
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+    }
+    #descripFame > div {
+        width: 50%;
+    }
+    #descripFame .textBox {
+        padding: 2em;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #descripFame .imgWrapper {
+        max-height: 50vh;
+        padding: 1em;
+    }
+    #descripFame img {
+        height: 100%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #descripFame {
+        padding: 0 15em;
+    }
+    #descripFame .imgWrapper {
+        max-height: 70vh;
+        padding: 1em;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #descripFame {
+        padding: 0 25em;
+    }
 }
 
 
@@ -89,15 +126,9 @@ section h2 {
 /* #triPhotos responsivity */
 @media screen and (min-width: 768px) {
     #triPhotos {
-        height: 40vh;
+        min-height: 40vh;
         display: flex;
     }
-    #triPhotos .col {
-        width: calc(100% / 3);
-        padding: 0;
-    }
-}
-@media screen and (min-width: 1024px) {
     #triPhotos .col {
         width: calc(100% / 3);
         padding: 0.5em;
@@ -105,7 +136,7 @@ section h2 {
 }
 @media screen and (min-width: 1280px) {
     #triPhotos {
-        height: 50vh;
+        min-height: 50vh;
     }
     #triPhotos .col {
         padding: 3em;
@@ -146,29 +177,93 @@ section h2 {
 }
 
 
-#characters {
+#infos {
+    padding: 4em;
+}
+#infos > div {
+    margin-bottom: 2em;
+}
+
+/* Infos responsivity */
+@media screen and (min-width: 768px) {
+    #infos {
+        min-height: 30vh;
+        display: flex;
+        padding: 0 2em;
+    }
+    #infos > div {
+        width: calc(100% / 3);
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #infos {
+        padding: 0 15%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #infos {
+        padding: 0 20%;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #infos {
+        padding: 0 30%;
+    }
+}
+
+
+#partners {
     background: url("../static/img/curtain2-min.jpg");
-    background-size: 200% 100%;
-    padding: 5em 20%;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding: 5em 5%;
 }
-#charBoxesWrapper {
-    padding: 5em 0;
+#logos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
 }
-.charBox {
-    padding: 1em;
-    margin-bottom: 4em;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+#logos > .imgWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
 }
-.charBox img {
+#logos img {
     width: 100%;
 }
-.charBox h3 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+
+/* Partners responsivity */
+@media screen and (min-width: 768px) {
+    #partners {
+        padding: 5em 5%;
+        min-height: 40vh;
+    }
+    #logos > .imgWrapper {
+        width: 25%;
+    }
 }
-.charBox p {    
-    text-align: justify;
+@media screen and (min-width: 1024px) {
+    #partners {
+        padding: 5em 10%;
+        min-height: 30vh;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #partners {
+        padding: 5em 20%;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #partners {
+        padding: 5em 25%;
+    }
 }
 
 
@@ -181,72 +276,18 @@ section h2 {
     #logoSection img {
         width: 50%;
     }
-
-
-    #characters {
-        padding: 5em 10%;
+}
+@media screen and (min-width: 1024px) {    
+    #nav a {
+        color: black;
     }
-    #charBoxesWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 4em;
-        row-gap: 0;
+    #nav a:hover, #navbar.scrolled #nav a {
+        color: gray;
+    }
+    #navbar.scrolled #nav a.active, #navbar.scrolled #nav a:hover {
+        color: white;
     }
 }
-
-@media screen and (min-width: 1024px) {
-    html {
-        /* For parallax */
-        overflow: hidden;
-    }
-
-    body {
-        /* For parallax */
-        height: 100vh;
-        perspective: 1px;
-        transform-style: preserve-3d;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    /* This rule negates the scrolling effects of the navbar, which is used for the other pages */
-    #navbar {
-        position: absolute;
-    }
-    #navbar.scrolled {
-        background-color: transparent;
-    }
-    #navbar.scrolled #nav {
-        width: 100%;
-        font-size: 2em;
-    }
-
-    #logoSection::before {
-        /* For parallax */
-        /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
-        transform: translateZ(-1px) scale(2);
-    }
-    #logoSection {
-        /* For parallax */
-        transform-style: preserve-3d;
-        /* In order to not overlap the next section */
-        z-index: -1;
-    }
-    #logoSection #logoBox {
-        opacity: 0;
-        transition: all 1s ease-in;
-    }
-    #logoSection #logoBox.visible {
-        opacity: 1;
-    }
-
-    #characters {
-	background-size: 100% 100%;
-	background-attachment: fixed;
-        padding: 5em 20%;
-    }
-}
-
 @media screen and (min-width: 1280px) {
     .textSection .textBox {
         margin: 0 30%;
@@ -255,21 +296,9 @@ section h2 {
     #logoSection img {
         width: 30%;
     }
-
-    #characters {
-        padding: 5em 10%;
-    }
-    #charBoxesWrapper {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
 }
-
 @media screen and (min-width: 1600px) {
     .textSection .textBox {
         margin: 0 30%;
-    }
-
-    #characters {
-        padding: 5em 20%;
     }
 }

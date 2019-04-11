@@ -122,7 +122,6 @@ section.first {
     }
     #navbar #nav {
         display: block;
-        width: auto;
         height: auto;
         opacity: 1;
         text-align: center;

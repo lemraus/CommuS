@@ -1,0 +1,68 @@
+section h2 {
+    font-family: Duck in Shipah;
+    font-size: 3em;
+}
+
+#characters {
+    padding: 5em 20%;
+}
+#charBoxesWrapper {
+    padding: 5em 0;
+}
+.charBox {
+    padding: 1em;
+    margin-bottom: 4em;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.charBox img {
+    width: 100%;
+}
+.charBox h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.charBox p {    
+    text-align: center;
+}
+
+@media screen and (min-width: 768px){
+    .textSection .textBox {
+        margin: 0 20%;
+    }
+
+
+    #logoSection img {
+        width: 50%;
+    }
+
+
+    #characters {
+        padding: 5em 10%;
+    }
+    #charBoxesWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4em;
+        row-gap: 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #characters {
+        padding: 8em 20%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #characters {
+        padding: 8em 10%;
+    }
+    #charBoxesWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #characters {
+        padding: 8em 20%;
+    }
+}
