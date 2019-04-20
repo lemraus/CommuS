@@ -238,6 +238,15 @@ section h2 {
 #logos img {
     width: 100%;
 }
+#droits {
+    margin: 5em 0;
+}
+#droits p {
+    margin: 1em 0;
+}
+#droits a {
+    color: white;
+}
 
 /* Partners responsivity */
 @media screen and (min-width: 768px) {
