@@ -55,6 +55,9 @@ section h2 {
     font-size: 1.3em;
     margin-bottom: 2em;
 }
+#descripFame h2 {
+    margin-bottom: 0.2em;
+}
 #descripFame img {
     max-width: 100%;
 }
