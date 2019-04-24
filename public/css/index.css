@@ -247,15 +247,6 @@ section h2 {
 #logos img {
     width: 100%;
 }
-#droits {
-    margin: 5em 0;
-}
-#droits p {
-    margin: 1em 0;
-}
-#droits a {
-    color: white;
-}
 
 /* Partners responsivity */
 @media screen and (min-width: 768px) {
@@ -318,5 +309,41 @@ section h2 {
 @media screen and (min-width: 1600px) {
     .textSection .textBox {
         margin: 0 30%;
+    }
+}
+
+
+/* Credits */
+#credits {
+    padding: 2em 5%;
+}
+#noms > * {
+    margin: 1em 0;
+}
+.tricol, .bicol {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.tricol span {
+    width: 33%;
+}
+.bicol span {
+    width: 50%;
+}
+#droits {
+    margin: 5em 0;
+}
+#droits p {
+    margin: 1em 0;
+}
+#droits a {
+    color: white;
+}
+
+/* Credits responsivity */
+@media screen and (min-width: 1024px) {
+    .tricol, .bicol {
+        width: 50%;
     }
 }
