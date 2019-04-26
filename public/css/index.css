@@ -192,6 +192,9 @@ section h2 {
 #infos h2 {
     margin-bottom: 0.2em;
 }
+#billetterie img {
+    width: 50%;
+}
 
 /* Infos responsivity */
 @media screen and (min-width: 768px) {

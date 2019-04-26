@@ -1,4 +1,9 @@
-section h1 {
-    font-family: Duck in Shipah;
-    font-size: 4em;
+#billetterie {
+    padding: 0 10%;
+}
+#billetterie h2 {
+    margin-bottom: 1em;
+}
+#billetterie img {
+    width: 150px;
 }
