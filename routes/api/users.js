@@ -1,6 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-import { secret } from "../../config/passport";
+import { secret, auth } from "../../config/passport";
 
 import User from "../../models/User";
 
@@ -8,7 +8,7 @@ const router = new Router();
 
 router
     // Creating a new user
-    .post("/", (req, res) => {
+    .post("/", auth, (req, res) => {
         const { username, password } = req.body;
         if (!username || !password) return res.status(400).send({
             err: `Required fields not found: ${!username && "username "}${!password && "password"}`
