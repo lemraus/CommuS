@@ -46,5 +46,22 @@ router
             return res.status(202).send(deletedMembre);
         });
     })
+    // modify a member
+    .put("/:id", auth, (req, res) => {
+        const { id } = req.params;
+        const { name, poste, photoPath } = req.body;
+        if (!id) return res.status(400).send({ err: "Required field missing: id" });
+
+        Membre.findOneAndUpdate(
+            { _id: id },
+            { name, poste, photoPath },
+            { new: true },
+            function (err, modifiedMember) {
+                if (err) return res.status(400).send({ err });
+
+                return res.status(202).send(modifiedMember);
+            }
+        );
+    })
 
 export default router;

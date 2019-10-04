@@ -1,9 +1,9 @@
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#billetterie {
+    padding: 0 10%;
 }
-section h1 {
-    font-family: Duck in Shipah;
-    font-size: 5em;
+#billetterie h2 {
+    margin-bottom: 1em;
+}
+#billetterie img {
+    width: 150px;
 }

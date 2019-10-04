@@ -23,11 +23,8 @@ function getCookie(req, cname) {
 }
 
 router
-    .get("/", function (req, res) {
-        return res.sendFile(publicDir + "index.html");
-    })
-    .get("/trailer", function (req, res) {
-        return res.sendFile(publicDir + "trailer.html");
+    .get("/personnages", function (req, res) {
+        return res.sendFile(publicDir + "personnages.html");
     })
     .get("/billetterie", function (req, res) {
         return res.sendFile(publicDir + "billetterie.html");

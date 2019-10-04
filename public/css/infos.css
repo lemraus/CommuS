@@ -69,6 +69,19 @@ section {
     max-height: 85vh;
 }
 
+.mapContainer {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    margin-bottom: 1em;
+}
+.mapContainer iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media screen and (min-width: 768px) {
     section {
         padding: 7em 2em;

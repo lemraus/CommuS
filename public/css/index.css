@@ -1,34 +1,18 @@
 /* General */
 
 body {
-    background: darkred;
+    background: black;
+    overflow-x: hidden;
 }
 
 section {
     position: relative;
-    min-height: 100vh;
     background-size: cover;
     text-align: center;
 }
 section h2 {
     font-size: 3em;
     font-family: Duck in Shipah;
-}
-
-
-.textSection .textBox {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
-    padding: 1em;
-    text-align: justify;
-}
-.textSection .textBox h2 {
-    text-align: center;
-    font-family: Duck in Shipah;
-    font-size: 3em;
 }
 
 
@@ -39,16 +23,24 @@ section h2 {
     width: 100%;
     min-height: 100vh;
     top: 0; left: 0;
-    background: url("../static/img/curtain-min.jpg");
-    background-size: 100% 100%;
+    background: url("../static/img/homebg.jpg") center center;
+    background-size: cover;
     position: absolute;
     z-index: -1;
 }
 #logoSection {
     font-family: Aliquam UltraLight;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+#logoSection #logoBox {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+#logoSection #logoBox.visible {
+    opacity: 1;
 }
 #logoSection img {
     width: 60%;
@@ -56,35 +48,235 @@ section h2 {
 
 
 #descripFame {
-    background-image: url("../static/img/descripbg.jpg");
+    background: black;
+    padding: 4em;
 }
 #descripFame .textBox {
     font-size: 1.3em;
+    margin-bottom: 2em;
+}
+#descripFame h2 {
+    margin-bottom: 0.2em;
+}
+#descripFame img {
+    max-width: 100%;
 }
 
-#characters {
-    background: url("../static/img/curtain2-min.jpg");
-    background-size: 200% 100%;
-    padding: 5em 20%;
+@media screen and (min-width: 768px) {
+    #descripFame {
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+    }
+    #descripFame > div {
+        width: 50%;
+    }
+    #descripFame .textBox {
+        padding: 2em;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #descripFame .imgWrapper {
+        max-height: 50vh;
+        padding: 1em;
+    }
+    #descripFame img {
+        height: 100%;
+    }
 }
-#charBoxesWrapper {
-    padding: 5em 0;
+@media screen and (min-width: 1280px) {
+    #descripFame {
+        padding: 0 15em;
+    }
+    #descripFame .imgWrapper {
+        max-height: 70vh;
+        padding: 1em;
+    }
 }
-.charBox {
+@media screen and (min-width: 1920px) {
+    #descripFame {
+        padding: 0 25em;
+    }
+}
+
+
+#triPhotos {
+    overflow: hidden;
+}
+#triPhotos .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3em;
+    background-size: cover;
+}
+#orchestreCol {
+    background: url("../static/img/orchestre.jpg") center center;
+}
+#succesPlanetaireCol {
+    background: url("../static/img/succes_planetaire.jpg") center center;
+}
+#spectacleEtudiantCol {
+    background: url("../static/img/spectacle_etudiant.jpg") center center;
+}
+#triPhotos .colText {
+    background: rgba(0, 0, 0, 0.7);
     padding: 1em;
-    margin-bottom: 4em;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 }
-.charBox img {
+#triPhotos .colText h2 {
+    margin-bottom: 0.2em;
+}
+
+/* #triPhotos responsivity */
+@media screen and (min-width: 768px) {
+    #triPhotos {
+        min-height: 40vh;
+        display: flex;
+    }
+    #triPhotos .col {
+        width: calc(100% / 3);
+        padding: 0.5em;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #triPhotos {
+        min-height: 50vh;
+    }
+    #triPhotos .col {
+        padding: 3em;
+        background: none;
+    }
+    #triPhotos .col::before {
+        content: "";
+        width: calc(100% / 3);
+        position: absolute;
+        top: 0; bottom: 0;
+        background-size: cover;
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in;
+        z-index: -1;
+    }
+    #triPhotos .col:hover::before {
+        opacity: 1;
+    }
+
+    #orchestreCol::before {
+        left: 0; 
+        background: url("../static/img/orchestre.jpg") center center;
+    }
+    #succesPlanetaireCol::before {
+        left: calc(100% / 3);
+        background: url("../static/img/succes_planetaire.jpg") center center;
+    }
+    #spectacleEtudiantCol::before {
+        left: calc(100% * 2 / 3);
+        background: url("../static/img/spectacle_etudiant.jpg") center center;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #triPhotos .col {
+        padding: 5em;
+        background: none;
+    }
+}
+
+
+#infos {
+    padding: 4em;
+}
+#infos > div {
+    margin-bottom: 2em;
+}
+#infos h2 {
+    margin-bottom: 0.2em;
+}
+#billetterie img {
+    width: 50%;
+}
+
+/* Infos responsivity */
+@media screen and (min-width: 768px) {
+    #infos {
+        min-height: 30vh;
+        display: flex;
+        padding: 0 2em;
+    }
+    #infos > div {
+        width: calc(100% / 3);
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #infos {
+        padding: 0 15%;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #infos {
+        padding: 0 20%;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #infos {
+        padding: 0 30%;
+    }
+}
+
+
+#partners {
+    background: url("../static/img/curtain2-min.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding: 5em 5%;
+}
+#logos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    justify-content: center;
+}
+#logos > .imgWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+}
+#logos img {
     width: 100%;
 }
-.charBox h3 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+
+/* Partners responsivity */
+@media screen and (min-width: 768px) {
+    #partners {
+        padding: 5em 5%;
+        min-height: 40vh;
+    }
+    #logos > .imgWrapper {
+        width: 25%;
+    }
 }
-.charBox p {    
-    text-align: justify;
+@media screen and (min-width: 1024px) {
+    #partners {
+        padding: 5em 10%;
+        min-height: 30vh;
+    }
+}
+@media screen and (min-width: 1280px) {
+    #partners {
+        padding: 5em 20%;
+    }
+}
+@media screen and (min-width: 1920px) {
+    #partners {
+        padding: 5em 25%;
+    }
 }
 
 
@@ -97,72 +289,18 @@ section h2 {
     #logoSection img {
         width: 50%;
     }
-
-
-    #characters {
-        padding: 5em 10%;
+}
+@media screen and (min-width: 1024px) {    
+    #nav a {
+        color: black;
     }
-    #charBoxesWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 4em;
-        row-gap: 0;
+    #nav a:hover, #navbar.scrolled #nav a {
+        color: gray;
+    }
+    #navbar.scrolled #nav a.active, #navbar.scrolled #nav a:hover {
+        color: white;
     }
 }
-
-@media screen and (min-width: 1024px) {
-    html {
-        /* For parallax */
-        overflow: hidden;
-    }
-
-    body {
-        /* For parallax */
-        height: 100vh;
-        perspective: 1px;
-        transform-style: preserve-3d;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    /* This rule negates the scrolling effects of the navbar, which is used for the other pages */
-    #navbar {
-        position: absolute;
-    }
-    #navbar.scrolled {
-        background-color: transparent;
-    }
-    #navbar.scrolled #nav {
-        width: 100%;
-        font-size: 2em;
-    }
-
-    #logoSection::before {
-        /* For parallax */
-        /* The scale(2) means that we multiply the background's size by 2 since it was divided by 2 by the transform */
-        transform: translateZ(-1px) scale(2);
-    }
-    #logoSection {
-        /* For parallax */
-        transform-style: preserve-3d;
-        /* In order to not overlap the next section */
-        z-index: -1;
-    }
-    #logoSection #logoBox {
-        opacity: 0;
-        transition: all 1s ease-in;
-    }
-    #logoSection #logoBox.visible {
-        opacity: 1;
-    }
-
-    #characters {
-	background-size: 100% 100%;
-	background-attachment: fixed;
-        padding: 5em 20%;
-    }
-}
-
 @media screen and (min-width: 1280px) {
     .textSection .textBox {
         margin: 0 30%;
@@ -171,21 +309,45 @@ section h2 {
     #logoSection img {
         width: 30%;
     }
-
-    #characters {
-        padding: 5em 10%;
-    }
-    #charBoxesWrapper {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
 }
-
 @media screen and (min-width: 1600px) {
     .textSection .textBox {
         margin: 0 30%;
     }
+}
 
-    #characters {
-        padding: 5em 20%;
+
+/* Credits */
+#credits {
+    padding: 2em 5%;
+}
+#noms > * {
+    margin: 1em 0;
+}
+.tricol, .bicol {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.tricol span {
+    width: 33%;
+}
+.bicol span {
+    width: 50%;
+}
+#droits {
+    margin: 5em 0;
+}
+#droits p {
+    margin: 1em 0;
+}
+#droits a {
+    color: white;
+}
+
+/* Credits responsivity */
+@media screen and (min-width: 1024px) {
+    .tricol, .bicol {
+        width: 50%;
     }
 }
