@@ -8,7 +8,7 @@ import apiRouter from "./routes/api";
 require("dotenv").config();
 
 const publicDir = path.join(__dirname, "public");
-const equipeDir = path.join(__dirname, "../equipe-app/");
+const equipeDir = path.join(__dirname, "..", "equipe-app");
 
 // Creating the Express app and setting the parser
 const app = new express();
