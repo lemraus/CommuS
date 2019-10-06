@@ -1,6 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-import { secret, auth } from "../../config/passport";
+import { secretOrKey, auth } from "../../config/passport";
 
 import User from "../../models/User";
 
@@ -14,7 +14,7 @@ router
             err: `Required fields not found: ${!username && "username "}${!password && "password"}`
         });
 
-        const newUser = new User({
+        new User({
             username,
             password
         })
@@ -43,7 +43,7 @@ router
                     id: user._id
                 };
 
-                const token = jwt.sign(payload, secret, {
+                const token = jwt.sign(payload, secretOrKey, {
                     expiresIn: "3d"
                 });
 

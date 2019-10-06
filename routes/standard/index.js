@@ -1,9 +1,9 @@
-import express, { Router } from "express";
+import { Router } from "express";
 import path from "path";
 
 const router = new Router();
 
-const publicDir = path.join(__dirname, "../../public/");
+const publicDir = path.join(__dirname, "..", "..", "public");
 
 function getCookie(req, cname) {
     if (!req.headers.cookie) return "";
