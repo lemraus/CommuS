@@ -35,7 +35,7 @@
         "passport-jwt": "^4.0.0",
         "request": "^2.88.0",
         "serve": "^10.1.2",
-        "set-value": "^3.0.1"
+        "set-value": "^4.0.1"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
